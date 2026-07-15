@@ -4,23 +4,24 @@
   --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 
-  --color-bg: #0b0b0d;
-  --color-surface: #161619;
-  --color-surface-2: #1f1f24;
-  --color-border: #2a2a30;
-  --color-ink: #f5f4f0;
-  --color-muted: #9b9a98;
-  --color-accent: #ff6a3d;
-  --color-accent-ink: #150a04;
-  --color-zone1: #6f6a63;
-  --color-zone2: #6f8f6a;
+  --color-bg: #efece2;
+  --color-surface: #efece2;
+  --color-surface-2: #e4e0d2;
+  --color-border: #141414;
+  --color-ink: #141414;
+  --color-muted: #6b655c;
+  --color-accent: #141414;
+  --color-accent-ink: #efece2;
+  --color-highlight: #9c2b2b;
+  --color-zone1: #b9b3a4;
+  --color-zone2: #7c8b6f;
   --color-zone3: #d9a441;
-  --color-zone4: #d94e3f;
+  --color-zone4: #9c2b2b;
   --color-strava: #fc4c02;
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {

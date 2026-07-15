@@ -25,36 +25,32 @@ export function DayCard({ plan, index }: { plan: DayPlan; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.04, duration: 0.35, ease: "easeOut" }}
+      transition={{ delay: index * 0.04, duration: 0.3, ease: "easeOut" }}
     >
       <Link
         to={`/day/${plan.day}`}
-        className={`group flex items-center gap-4 rounded-2xl border bg-surface p-4 transition hover:border-accent/60 hover:bg-surface-2 ${
-          today ? "border-accent/50" : "border-border"
-        }`}
+        className="group flex items-start gap-4 border-b border-border/15 py-3 transition hover:opacity-70"
       >
-        <div className="flex w-16 shrink-0 flex-col">
-          <span className="font-display text-2xl leading-none tracking-wide text-ink">
-            {plan.label.slice(0, 3).toUpperCase()}
+        <div className="flex w-32 shrink-0 flex-col pt-1">
+          <span className="font-display text-xl leading-none tracking-wide whitespace-nowrap text-ink">
+            {plan.label.toUpperCase()}
           </span>
-          <span className={`mt-1 text-[11px] font-medium ${today ? "text-accent" : "text-muted"}`}>
+          <span className={`mt-1 text-[11px] font-semibold uppercase tracking-wide ${today ? "text-highlight" : "text-muted"}`}>
             {today ? "Today" : formatDateLabel(date)}
           </span>
         </div>
 
-        <div className="flex flex-1 flex-wrap gap-2">
+        <div className="flex flex-1 flex-wrap items-center gap-2 pt-0.5">
           {workouts.length === 0 ? (
-            <span className="text-xs text-muted">Rest day</span>
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted">Rest day</span>
           ) : (
             workouts.map((w) => {
               const log = logs[`${date}:${w.id}`];
               const wTotal = workoutTaskCount(w);
               const wDone = log ? workoutTasksDone(w, log) : 0;
-              return (
-                <Tag key={w.id} label={w.tag} type={w.type} done={wTotal > 0 && wDone === wTotal} />
-              );
+              return <Tag key={w.id} label={w.tag} done={wTotal > 0 && wDone === wTotal} />;
             })
           )}
         </div>

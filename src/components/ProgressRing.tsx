@@ -20,6 +20,7 @@ export function ProgressRing({ value, total, size = 34 }: ProgressRingProps) {
           r={radius}
           fill="none"
           stroke="var(--color-border)"
+          strokeOpacity={0.18}
           strokeWidth={3}
         />
         <circle
@@ -27,7 +28,7 @@ export function ProgressRing({ value, total, size = 34 }: ProgressRingProps) {
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke={done ? "var(--color-accent)" : "var(--color-zone2)"}
+          stroke={done ? "var(--color-highlight)" : "var(--color-ink)"}
           strokeWidth={3}
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -35,7 +36,7 @@ export function ProgressRing({ value, total, size = 34 }: ProgressRingProps) {
           className="transition-[stroke-dashoffset] duration-300"
         />
       </svg>
-      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-ink/80">
+      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-ink/70">
         {total > 0 ? `${value}/${total}` : ""}
       </span>
     </div>

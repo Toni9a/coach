@@ -25,7 +25,7 @@ export function LiftLog({ workout, date }: { workout: LiftWorkout; date: string 
         return (
           <div key={ex.id}>
             {showGroupLabel && (
-              <div className="pb-1 pt-3 text-[11px] font-bold uppercase tracking-wide text-accent">
+              <div className="pb-1 pt-3 text-[11px] font-bold uppercase tracking-wide text-ink">
                 Superset
               </div>
             )}
